@@ -133,16 +133,17 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  padding: 20px 0;
+  padding: 12px 0;
   transition: background var(--trans), padding var(--trans), backdrop-filter var(--trans);
 }
 #navbar.scrolled {
   background: rgba(13,13,13,0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  padding: 12px 0;
+  padding: 8px 0;
   border-bottom: 1px solid var(--c-border);
 }
+#navbar.scrolled .nav-logo-img { height: 72px; }
 .nav-inner {
   max-width: 1200px;
   margin: 0 auto;
@@ -152,7 +153,13 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   justify-content: space-between;
 }
 .nav-logo { display: flex; align-items: center; }
-.nav-logo-img { height: 48px; width: auto; object-fit: contain; }
+.nav-logo-img {
+  height: 90px;
+  width: auto;
+  object-fit: contain;
+  transition: height var(--trans);
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.6));
+}
 .nav-links {
   display: flex;
   align-items: center;
