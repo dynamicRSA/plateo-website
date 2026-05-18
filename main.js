@@ -164,9 +164,6 @@ if (form) {
       case 'form-guests':
         setError('err-guests', (!t.value || parseInt(t.value) < 1) ? 'Please enter the number of guests.' : '');
         break;
-      case 'form-referral':
-        setError('err-referral', t.value.trim().length < 2 ? 'Please tell us how you heard about us.' : '');
-        break;
     }
   });
 
@@ -200,9 +197,7 @@ if (form) {
     const guests   = sanitize(document.getElementById('form-guests').value);
     const seafood  = sanitize(document.getElementById('form-seafood').value);
     const chicken  = sanitize(document.getElementById('form-chicken').value);
-    const mushroom = sanitize(document.getElementById('form-mushroom').value);
-    const seating  = sanitize(form.querySelector('input[name="seating"]:checked')?.value || '');
-    const referral = sanitize(document.getElementById('form-referral').value);
+    const vegetarian = sanitize(document.getElementById('form-mushroom').value);
     const message  = sanitize(document.getElementById('form-message').value);
 
     // ── 4. Full field-level validation ───────────────────────
@@ -215,14 +210,12 @@ if (form) {
     if (!date || !isFutureDate(date))       { setError('err-date',     'Please select a future date.');             valid = false; }
     if (!time)                              { setError('err-time',     'Please select a serving time.');            valid = false; }
     if (!guests || parseInt(guests) < 1)    { setError('err-guests',   'Please enter the number of guests.');       valid = false; }
-    if (!seating)                           { setError('err-seating',  'Please select a seating preference.');      valid = false; }
-    if (referral.length < 2)               { setError('err-referral', 'Please tell us how you heard about us.');   valid = false; }
 
     // Paella: at least one type must be > 0, and any non-zero must be >= 20
     const paellaVals = [
-      { name: 'Seafood',  val: parseInt(seafood)  || 0 },
-      { name: 'Chicken',  val: parseInt(chicken)  || 0 },
-      { name: 'Mushroom', val: parseInt(mushroom) || 0 },
+      { name: 'Seafood',    val: parseInt(seafood)    || 0 },
+      { name: 'Chicken',    val: parseInt(chicken)    || 0 },
+      { name: 'Vegetarian', val: parseInt(vegetarian) || 0 },
     ];
     const totalPaella = paellaVals.reduce((s, p) => s + p.val, 0);
     const underMin    = paellaVals.filter(p => p.val > 0 && p.val < 20);
@@ -263,9 +256,6 @@ if (form) {
       `Paella Types:`,
       paellaLines || '  None specified',
       ``,
-      `Event Seating: ${seating}`,
-      ``,
-      `How they heard: ${referral}`,
       message ? `\nMessage:\n${message}` : '',
     ].filter(l => l !== undefined).join('\n');
 
