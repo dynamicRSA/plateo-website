@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ═══ SECURITY HEADERS ═══ -->
+  <!-- Content Security Policy: restrict what can load -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://images.squarespace-cdn.com data:; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none';" />
+  <!-- Prevent clickjacking -->
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <!-- Prevent MIME-type sniffing -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <!-- Referrer policy: don't leak URL to third parties -->
+  <meta name="referrer" content="no-referrer" />
+  <!-- Disable browser features not needed -->
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+  <title>Pla-téo | Authentic Spanish Street Food · Gauteng, South Africa</title>
+  <meta name="description" content="Pla-téo brings the soul of a Madrid family kitchen to your event. Authentic Spanish catering — Paellas, Churros, and on-site cooking experiences across Gauteng." />
+  <meta property="og:title" content="Pla-téo | Authentic Spanish Street Food" />
+  <meta property="og:description" content="Spanish owned catering specialists. Paellas, Churros &amp; unforgettable on-site cooking experiences." />
+  <meta property="og:url" content="https://www.plateo.co.za" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════════════════════════ -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" id="nav-logo-link">
+        <img src="assets/logo.webp" alt="Pla-téo Spanish Street Food" class="nav-logo-img" />
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="#about"   class="nav-link">About</a></li>
+        <li><a href="#food"    class="nav-link">Our Food</a></li>
+        <li><a href="#locations" class="nav-link">Locations</a></li>
+        <li><a href="#team"    class="nav-link">Our Team</a></li>
+        <li><a href="#contact" class="nav-cta">Book an Event</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════════════════════ -->
+  <section id="hero" class="hero" aria-label="Hero">
+    <div class="hero-bg" id="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content reveal">
+      <p class="hero-eyebrow">Authentic · Spanish · Street Food</p>
+      <h1 class="hero-title">
+        Cooked with<br />
+        <em>Pasión</em>
+      </h1>
+      <p class="hero-sub">
+        From the heart of a Madrid family kitchen — brought to your event in Gauteng.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" id="hero-cta-book" class="btn btn-primary">Book Your Event</a>
+        <a href="#food"    id="hero-cta-food"  class="btn btn-ghost">Explore Our Food</a>
+      </div>
+    </div>
+    <a href="#about" class="hero-scroll" id="hero-scroll-arrow" aria-label="Scroll to About">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </a>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       ABOUT
+  ═══════════════════════════════════════════════════════════ -->
+  <section id="about" class="section about" aria-labelledby="about-heading">
+    <div class="container">
+      <div class="about-grid">
+
+        <div class="about-text reveal">
+          <span class="section-label">Our Story</span>
+          <h2 id="about-heading" class="section-title">Madrid's Kitchen,<br />Your Event</h2>
+          <p class="body-text">
+            Pla-téo is a Spanish-owned catering business specialising in Authentic Spanish Street Food, 
+            learnt from the heart of a family kitchen in Madrid. Spanish cuisine is all about socialising 
+            and enjoying food at the same time.
+          </p>
+          <p class="body-text">
+            Sarita, as a proud Spaniard, aims to share authentic Spanish flavours and experiences with dishes 
+            she grew up with — getting inspiration from her dad's cooking, who taught her to be proud of 
+            her culture and to cook with love.
+          </p>
+          <blockquote class="pull-quote">
+            "Add some passion to your food-life with our authentic Spanish taste."
+          </blockquote>
+          <a href="mailto:sarita@plateo.co.za" id="about-email-link" class="btn btn-outline">sarita@plateo.co.za</a>
+        </div>
+
+        <div class="about-visual reveal reveal-right">
+          <div class="about-img-stack">
+            <div class="about-img-card card-1">
+              <img 
+                src="assets/sarita_team.jpg"
+                alt="Sarita and team cooking paella at a Pla-téo event"
+                loading="lazy"
+              />
+            </div>
+            <div class="about-img-card card-2">
+              <img 
+                src="assets/real_paella.jpg"
+                alt="Pla-téo seafood paella at an event"
+                loading="lazy"
+              />
+            </div>
+            <div class="about-badge">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17 5.8 21.3l2.4-7.4L2 9.4h7.6z"/></svg>
+              <span>Est.</span>
+              <strong>2017</strong>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       OUR FOOD
+  ═══════════════════════════════════════════════════════════ -->
+  <section id="food" class="section food" aria-labelledby="food-heading">
+    <div class="food-bg-text" aria-hidden="true">SABOR</div>
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">On The Menu</span>
+        <h2 id="food-heading" class="section-title">Our Food</h2>
+        <p class="section-subtitle">
+          Contact us with details about your event and we will tailor-make a menu that suits you.
+        </p>
+      </div>
+
+      <div class="food-cards">
+
+        <article class="food-card reveal" id="food-card-paella">
+          <div class="food-card-img">
+            <img src="assets/real_paella.jpg" alt="Assorted Paellas — Pla-téo signature dish" loading="lazy" />
+            <div class="food-card-img-overlay"></div>
+          </div>
+          <div class="food-card-body">
+            <h3 class="food-card-title">Assorted Paellas</h3>
+            <p class="food-card-desc">
+              Saffron-infused rice cooked over open fire — seafood, mixed, and vegetarian options available. 
+              The centrepiece of any great Spanish event.
+            </p>
+            <span class="food-tag">Signature Dish</span>
+          </div>
+        </article>
+
+        <article class="food-card reveal food-card--featured" id="food-card-experience">
+          <div class="food-card-img">
+            <img src="assets/event_cooking.png" alt="On-site cooking experience at an outdoor event" loading="lazy" />
+            <div class="food-card-img-overlay"></div>
+          </div>
+          <div class="food-card-body">
+            <h3 class="food-card-title">On-Site Experience</h3>
+            <p class="food-card-desc">
+              We cook all of our dishes on site, making the cooking an entertainment experience for your guests. 
+              Food is theatre — we make it unforgettable.
+            </p>
+            <span class="food-tag food-tag--gold">Most Popular</span>
+          </div>
+        </article>
+
+        <article class="food-card reveal" id="food-card-churros">
+          <div class="food-card-img">
+            <img src="assets/churros.png" alt="Spanish churros with chocolate dipping sauce" loading="lazy" />
+            <div class="food-card-img-overlay"></div>
+          </div>
+          <div class="food-card-body">
+            <h3 class="food-card-title">Churros</h3>
+            <p class="food-card-desc">
+              Crispy, golden, cinnamon-sugar dusted churros with rich dark chocolate dipping sauce. 
+              The perfect sweet finale to a Spanish feast.
+            </p>
+            <span class="food-tag">Sweet Treat</span>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="food-cta reveal">
+        <a href="#contact" id="food-book-btn" class="btn btn-primary">Tailor My Menu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       LOCATIONS & HOURS
+  ═══════════════════════════════════════════════════════════ -->
+  <section id="locations" class="section locations" aria-labelledby="locations-heading">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Find Us</span>
+        <h2 id="locations-heading" class="section-title">Locations &amp; Hours</h2>
+        <p class="section-subtitle">Based in Gauteng — contact us for queries outside of Gauteng.</p>
+      </div>
+
+      <div class="location-cards location-cards--two">
+
+        <article class="location-card location-card--featured reveal" id="location-catering">
+          <div class="location-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 12h8M12 8v8M21 12c0 4.97-4.03 9-9 9S3 16.97 3 12 7.03 3 12 3s9 4.03 9 9z"/></svg>
+          </div>
+          <h3 class="location-name">Private Catering</h3>
+          <p class="location-place">Venue of Your Choice</p>
+          <p class="location-region">Gauteng &amp; surrounding areas</p>
+          <div class="location-divider"></div>
+          <p class="location-hours">By appointment</p>
+          <a href="mailto:info@plateo.co.za" class="location-contact">info@plateo.co.za</a>
+        </article>
+
+        <article class="location-card reveal" id="location-salvador">
+          <div class="location-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8zM5.5 19a1.5 1.5 0 100 3 1.5 1.5 0 000-3zM19.5 19a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/></svg>
+          </div>
+          <h3 class="location-name">Food Truck</h3>
+          <p class="location-place">Salvador Deli</p>
+          <p class="location-region">Gauteng</p>
+          <div class="location-divider"></div>
+          <p class="location-hours">Mon – Sun · 8am – 5pm</p>
+          <a href="mailto:info@plateo.co.za" class="location-contact">info@plateo.co.za</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       CONTACT
+  ═══════════════════════════════════════════════════════════ -->
+  <section id="contact" class="section contact" aria-labelledby="contact-heading">
+    <div class="container">
+      <div class="contact-grid">
+
+        <div class="contact-info reveal">
+          <span class="section-label">Get In Touch</span>
+          <h2 id="contact-heading" class="section-title">Book Your<br />Spanish Experience</h2>
+          <p class="body-text">
+            Complete the form and we'll get back to you with a quote within 24–48 hours.
+          </p>
+          <div class="contact-details">
+            <a href="mailto:sarita@plateo.co.za" id="contact-email-sarita" class="contact-item" rel="noopener">
+              <div class="contact-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <span class="contact-label">Sarita</span>
+                <span class="contact-value">sarita@plateo.co.za</span>
+              </div>
+            </a>
+            <a href="mailto:info@plateo.co.za" id="contact-email-info" class="contact-item" rel="noopener">
+              <div class="contact-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <span class="contact-label">General</span>
+                <span class="contact-value">info@plateo.co.za</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form reveal reveal-right" id="contact-form" novalidate autocomplete="off">
+          <!-- Honeypot: hidden from real users, filled by bots -->
+          <div class="hp-field" aria-hidden="true">
+            <label for="hp-website">Website</label>
+            <input type="text" id="hp-website" name="website" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <!-- Row 1: Full Name -->
+          <div class="form-group">
+            <label for="form-name">Full Name <span class="req" aria-label="required">*</span></label>
+            <input type="text" id="form-name" name="name"
+              placeholder="Jane Smith"
+              maxlength="100"
+              autocomplete="name"
+              required />
+            <span class="field-error" id="err-name" role="alert"></span>
+          </div>
+
+          <!-- Row 2: Email + Phone -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="form-email">Email <span class="req" aria-label="required">*</span></label>
+              <input type="email" id="form-email" name="email"
+                placeholder="jane@example.com"
+                maxlength="254"
+                autocomplete="email"
+                required />
+              <span class="field-error" id="err-email" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <label for="form-phone">Mobile Phone <span class="req" aria-label="required">*</span></label>
+              <input type="tel" id="form-phone" name="phone"
+                placeholder="082 000 0000"
+                maxlength="20"
+                autocomplete="tel"
+                required />
+              <span class="field-error" id="err-phone" role="alert"></span>
+            </div>
+          </div>
+
+          <!-- Row 3: Venue Address -->
+          <div class="form-group">
+            <label for="form-venue">Event Venue Address <span class="req" aria-label="required">*</span></label>
+            <input type="text" id="form-venue" name="venue"
+              placeholder="Event venue address"
+              maxlength="200"
+              required />
+            <span class="field-error" id="err-venue" role="alert"></span>
+          </div>
+
+          <!-- Row 4: Date + Time -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="form-date">Event Date <span class="req" aria-label="required">*</span></label>
+              <input type="date" id="form-date" name="event_date" required />
+              <span class="field-error" id="err-date" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <label for="form-time">Serving Time <span class="req" aria-label="required">*</span></label>
+              <input type="time" id="form-time" name="serving_time" required />
+              <span class="field-error" id="err-time" role="alert"></span>
+            </div>
+          </div>
+
+          <!-- Row 5: Guest Count -->
+          <div class="form-group">
+            <label for="form-guests">Number of Guests <span class="req" aria-label="required">*</span></label>
+            <input type="number" id="form-guests" name="guests"
+              placeholder="Minimum 40 for private events"
+              min="1" max="5000"
+              required />
+            <span class="field-error" id="err-guests" role="alert"></span>
+          </div>
+
+          <!-- Row 6: Paella Types -->
+          <div class="form-group form-group--paella">
+            <p class="paella-heading">Types of Paella</p>
+            <p class="paella-note">Minimum 20 per type. We recommend 2 types if your total is under 100.</p>
+            <div class="paella-grid">
+              <div class="paella-item">
+                <label for="form-seafood">Seafood</label>
+                <input type="number" id="form-seafood" name="paella_seafood"
+                  value="0" min="0" max="5000" />
+                <span class="paella-hint">20+ per type</span>
+              </div>
+              <div class="paella-item">
+                <label for="form-chicken">Chicken</label>
+                <input type="number" id="form-chicken" name="paella_chicken"
+                  value="0" min="0" max="5000" />
+                <span class="paella-hint">20+ per type</span>
+              </div>
+              <div class="paella-item">
+                <label for="form-mushroom">Mushroom</label>
+                <input type="number" id="form-mushroom" name="paella_mushroom"
+                  value="0" min="0" max="5000" />
+                <span class="paella-hint">20+ per type</span>
+              </div>
+            </div>
+            <span class="field-error" id="err-paella" role="alert"></span>
+          </div>
+
+          <!-- Row 7: Seating -->
+          <div class="form-group">
+            <p class="radio-heading">Event Seating <span class="req" aria-label="required">*</span></p>
+            <div class="radio-group">
+              <label class="radio-label" for="seating-yes">
+                <input type="radio" id="seating-yes" name="seating" value="Seating" required />
+                <span class="radio-custom"></span>
+                Seating
+              </label>
+              <label class="radio-label" for="seating-no">
+                <input type="radio" id="seating-no" name="seating" value="No/limited seating" />
+                <span class="radio-custom"></span>
+                No / Limited seating
+              </label>
+            </div>
+            <p class="radio-hint">This affects the type of bowls we recommend.</p>
+            <span class="field-error" id="err-seating" role="alert"></span>
+          </div>
+
+          <!-- Row 8: How did you hear -->
+          <div class="form-group">
+            <label for="form-referral">How did you hear about us? <span class="req" aria-label="required">*</span></label>
+            <input type="text" id="form-referral" name="referral"
+              placeholder="e.g. Instagram, Word of mouth, Google…"
+              maxlength="150"
+              required />
+            <span class="field-error" id="err-referral" role="alert"></span>
+          </div>
+
+          <!-- Row 9: Message -->
+          <div class="form-group">
+            <label for="form-message">Message <span class="form-optional">(optional)</span></label>
+            <textarea id="form-message" name="message"
+              rows="3"
+              maxlength="2000"
+              placeholder="Any special dietary requirements, theme, or other details…"></textarea>
+          </div>
+
+          <!-- Rate limit feedback -->
+          <div id="form-rate-msg" class="form-rate-msg" role="alert" aria-live="polite"></div>
+
+          <button type="submit" id="form-submit" class="btn btn-primary btn-full">
+            Send Enquiry →
+          </button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       OUR TEAM
+  ═══════════════════════════════════════════════════════════ -->
+  <section id="team" class="section team" aria-labelledby="team-heading">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">The People</span>
+        <h2 id="team-heading" class="section-title">Our Team</h2>
+        <p class="section-subtitle">
+          Our young, vibrant and experienced team are passionate about Spanish cuisine 
+          and love to share that passion at every event.
+        </p>
+      </div>
+
+      <div class="team-gallery">
+        <div class="team-photo reveal" id="team-photo-1">
+          <img 
+            src="https://images.squarespace-cdn.com/content/v1/597d9578e3df287cef66ebcf/1532366891324-LEZSRYSZWBIJ0M8WKA26/20545589_1740444339329361_8673892332528669949_o.jpg"
+            alt="Pla-téo team member at an event"
+            loading="lazy"
+          />
+          <div class="team-photo-overlay">
+            <p>Passion in every dish</p>
+          </div>
+        </div>
+        <div class="team-photo reveal team-photo--tall" id="team-photo-2">
+          <img 
+            src="https://images.squarespace-cdn.com/content/v1/597d9578e3df287cef66ebcf/1532366904632-FWK6G3PXFS1FSF7XUF3J/21551711_1782821211758340_1026118987239268508_o.jpg"
+            alt="Pla-téo team cooking at a Spanish food event"
+            loading="lazy"
+          />
+          <div class="team-photo-overlay">
+            <p>Authentically Spanish</p>
+          </div>
+        </div>
+        <div class="team-photo reveal" id="team-photo-3">
+          <img 
+            src="https://images.squarespace-cdn.com/content/v1/597d9578e3df287cef66ebcf/1532366892117-YPJM22V4JJRH5RRM005F/37591199_2225022874204836_3560885551785574400_o.jpg"
+            alt="Pla-téo team serving food at a community market"
+            loading="lazy"
+          />
+          <div class="team-photo-overlay">
+            <p>Made with love</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-quote reveal">
+        <p>We would love to deliver this experience at your next special occasion.</p>
+        <a href="#contact" id="team-book-btn" class="btn btn-ghost">Book Us Today</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo.webp" alt="Pla-téo Spanish Street Food" class="footer-logo-img" />
+          <p class="footer-tagline">Authentic Spanish Street Food<br />Gauteng, South Africa</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <h4>Navigate</h4>
+          <ul role="list">
+            <li><a href="#about" id="footer-about">About Us</a></li>
+            <li><a href="#food"  id="footer-food">Our Food</a></li>
+            <li><a href="#locations" id="footer-locations">Locations</a></li>
+            <li><a href="#team" id="footer-team">Our Team</a></li>
+            <li><a href="#contact" id="footer-contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <a href="mailto:sarita@plateo.co.za" id="footer-email-sarita">sarita@plateo.co.za</a>
+          <a href="mailto:info@plateo.co.za" id="footer-email-info">info@plateo.co.za</a>
+
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Pla-teo (Pty) Ltd. All rights reserved.</p>
+        <p class="footer-made">Made with <span aria-label="love">❤</span> in Madrid &amp; Gauteng</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
