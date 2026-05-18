@@ -700,6 +700,71 @@ textarea { resize: vertical; }
 }
 
 /* ═══════════════════════════════════════════════
+   TERMS & CONDITIONS
+═══════════════════════════════════════════════ */
+.terms { background: var(--c-bg); }
+.terms-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+  align-items: start;
+}
+.terms-card {
+  background: var(--c-bg-card);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-card);
+  padding: 32px 28px;
+  position: relative;
+  transition: border-color var(--trans), transform var(--trans);
+}
+.terms-card:hover { border-color: rgba(255,255,255,0.15); transform: translateY(-4px); }
+.terms-card--highlight {
+  border-color: rgba(230,126,34,0.35);
+  background: linear-gradient(145deg, #1f1408, #221508);
+}
+.terms-card--highlight:hover { border-color: rgba(230,126,34,0.6); }
+.terms-card--cancellation {
+  border-color: rgba(192,57,43,0.4);
+  background: linear-gradient(145deg, #1a0a0a, #200d0d);
+}
+.terms-card--cancellation:hover { border-color: rgba(192,57,43,0.7); }
+.terms-num {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: rgba(230,126,34,0.25);
+  line-height: 1;
+  margin-bottom: 12px;
+  letter-spacing: -0.03em;
+}
+.terms-card--cancellation .terms-num { color: rgba(192,57,43,0.3); }
+.terms-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--c-white);
+  margin-bottom: 14px;
+  letter-spacing: 0.02em;
+}
+.terms-body {
+  font-size: 0.875rem;
+  color: var(--c-muted);
+  line-height: 1.75;
+  margin-bottom: 10px;
+}
+.terms-body:last-child { margin-bottom: 0; }
+.terms-body strong { color: var(--c-text); font-weight: 600; }
+.terms-acceptance {
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(154,143,128,0.6);
+  border-top: 1px solid var(--c-border);
+  padding-top: 32px;
+  font-style: italic;
+}
+
+/* ═══════════════════════════════════════════════
    FOOTER
 ═══════════════════════════════════════════════ */
 .footer {
@@ -754,6 +819,7 @@ textarea { resize: vertical; }
   .card-1 { width: 65%; height: 280px; }
   .card-2 { width: 50%; height: 220px; }
   .food-cards,
+  .terms-grid,
   .service-area-inner { grid-template-columns: 1fr; min-height: auto; }
   .service-area-content { padding: 60px 24px; }
   .service-area-visual { height: 360px; }
