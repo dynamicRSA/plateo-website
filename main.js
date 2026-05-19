@@ -203,13 +203,13 @@ if (form) {
     // ── 4. Full field-level validation ───────────────────────
     let valid = true;
 
-    if (name.length < 2)                    { setError('err-name',     'Please enter your full name.');             valid = false; }
-    if (!isValidEmail(email))               { setError('err-email',    'Please enter a valid email address.');      valid = false; }
-    if (!isValidPhone(phone))               { setError('err-phone',    'Please enter a valid phone number.');       valid = false; }
-    if (venue.length < 3)                   { setError('err-venue',    'Please enter the venue address.');          valid = false; }
-    if (!date || !isFutureDate(date))       { setError('err-date',     'Please select a future date.');             valid = false; }
-    if (!time)                              { setError('err-time',     'Please select a serving time.');            valid = false; }
-    if (!guests || parseInt(guests) < 1)    { setError('err-guests',   'Please enter the number of guests.');       valid = false; }
+    if (name.length < 2)                    { setError('err-name',     'Please enter your full name.');             valid = false; } else { setError('err-name', ''); }
+    if (!isValidEmail(email))               { setError('err-email',    'Please enter a valid email address.');      valid = false; } else { setError('err-email', ''); }
+    if (!isValidPhone(phone))               { setError('err-phone',    'Please enter a valid phone number.');       valid = false; } else { setError('err-phone', ''); }
+    if (venue.length < 3)                   { setError('err-venue',    'Please enter the venue address.');          valid = false; } else { setError('err-venue', ''); }
+    if (!date || !isFutureDate(date))       { setError('err-date',     'Please select a future date.');             valid = false; } else { setError('err-date', ''); }
+    if (!time)                              { setError('err-time',     'Please select a serving time.');            valid = false; } else { setError('err-time', ''); }
+    if (!guests || parseInt(guests) < 1)    { setError('err-guests',   'Please enter the number of guests.');       valid = false; } else { setError('err-guests', ''); }
 
     // Paella: at least one type must be > 0, and any non-zero must be >= 20
     const paellaVals = [
