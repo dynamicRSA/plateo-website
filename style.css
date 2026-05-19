@@ -649,6 +649,41 @@ textarea { resize: vertical; }
   margin-bottom: 4px;
 }
 
+/* Success / Error banners */
+.form-banner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+  padding: 20px 24px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  animation: bannerSlide 0.4s ease;
+}
+.form-banner svg { width: 28px; height: 28px; flex-shrink: 0; }
+.form-banner strong { display: block; margin-bottom: 2px; }
+.form-banner p { margin: 0; font-size: 0.82rem; }
+.form-banner--success {
+  background: rgba(39,174,96,0.12);
+  border: 1px solid rgba(39,174,96,0.35);
+  color: #7dcea0;
+}
+.form-banner--success svg { color: #27ae60; }
+.form-banner--success strong { color: #2ecc71; }
+.form-banner--error {
+  background: rgba(192,57,43,0.12);
+  border: 1px solid rgba(192,57,43,0.35);
+  color: #e8a0a0;
+}
+.form-banner--error svg { color: #c0392b; }
+.form-banner--error strong { color: #e74c3c; }
+.form-banner--error a { color: var(--c-amber); text-decoration: underline; }
+@keyframes bannerSlide {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 /* ═══════════════════════════════════════════════
    TEAM
 ═══════════════════════════════════════════════ */

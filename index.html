@@ -6,7 +6,7 @@
 
   <!-- ═══ SECURITY HEADERS ═══ -->
   <!-- Content Security Policy: restrict what can load -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://images.squarespace-cdn.com data:; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none';" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://images.squarespace-cdn.com data:; connect-src https://formsubmit.co; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action https://formsubmit.co;" />
   <!-- Prevent clickjacking -->
   <meta http-equiv="X-Frame-Options" content="DENY" />
   <!-- Prevent MIME-type sniffing -->
@@ -281,8 +281,14 @@
           </div>
         </div>
 
-        <form class="contact-form reveal reveal-right" id="contact-form" novalidate autocomplete="off">
+        <form class="contact-form reveal reveal-right" id="contact-form" action="https://formsubmit.co/sarita@plateo.co.za" method="POST" novalidate autocomplete="off">
+          <!-- Formsubmit config -->
+          <input type="hidden" name="_subject" value="New Pla-téo Event Enquiry" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_next" value="https://plateo.co.za/#contact" />
           <!-- Honeypot: hidden from real users, filled by bots -->
+          <input type="text" name="_honey" style="display:none" />
           <div class="hp-field" aria-hidden="true">
             <label for="hp-website">Website</label>
             <input type="text" id="hp-website" name="website" tabindex="-1" autocomplete="off" />
@@ -399,6 +405,22 @@
           <button type="submit" id="form-submit" class="btn btn-primary btn-full">
             Send Enquiry →
           </button>
+
+          <!-- Success / Error banners -->
+          <div id="form-success" class="form-banner form-banner--success" style="display:none" role="alert">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <div>
+              <strong>Enquiry sent!</strong>
+              <p>Sarita will get back to you within 24–48 hours.</p>
+            </div>
+          </div>
+          <div id="form-error" class="form-banner form-banner--error" style="display:none" role="alert">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+            <div>
+              <strong>Something went wrong.</strong>
+              <p>Please email <a href="mailto:sarita@plateo.co.za">sarita@plateo.co.za</a> directly.</p>
+            </div>
+          </div>
         </form>
 
       </div>

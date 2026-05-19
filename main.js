@@ -236,43 +236,55 @@ if (form) {
       return;
     }
 
-    // ── 5. Build safe mailto body ─────────────────────────────
-    // Values already sanitised — encode for mailto URI
-    const paellaLines = paellaVals
-      .filter(p => p.val > 0)
-      .map(p => `  ${p.name}: ${p.val}`)
-      .join('\n');
-
-    const body = [
-      `Name: ${name}`,
-      `Email: ${email}`,
-      `Phone: ${phone}`,
-      ``,
-      `Event Date: ${date}`,
-      `Serving Time: ${time}`,
-      `Venue: ${venue}`,
-      `Guests: ${guests}`,
-      ``,
-      `Paella Types:`,
-      paellaLines || '  None specified',
-      ``,
-      message ? `\nMessage:\n${message}` : '',
-    ].filter(l => l !== undefined).join('\n');
-
-    const subject = `Event Enquiry — ${name} (${guests} guests, ${date})`;
-
-    // ── 6. Open mailto — no page navigation, no form POST ─────
-    window.location.href = `mailto:info@plateo.co.za?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-    // ── 7. Disable submit briefly to prevent double-click ─────
+    // ── 5. Submit via Formsubmit.co (AJAX) ──────────────────
     const btn = document.getElementById('form-submit');
+    const successBanner = document.getElementById('form-success');
+    const errorBanner   = document.getElementById('form-error');
+    if (successBanner) successBanner.style.display = 'none';
+    if (errorBanner)   errorBanner.style.display   = 'none';
+
+    // Update hidden subject with dynamic info
+    const subjectField = form.querySelector('input[name="_subject"]');
+    if (subjectField) subjectField.value = `Event Enquiry — ${name} (${guests} guests, ${date})`;
+
+    // Disable button
     if (btn) {
       btn.disabled = true;
-      btn.textContent = 'Opening mail client…';
-      setTimeout(() => {
+      btn.textContent = 'Sending…';
+    }
+
+    // Build FormData from the form (includes all named inputs + hidden Formsubmit config)
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' },
+    })
+    .then(res => {
+      if (res.ok) {
+        // Success
+        form.reset();
+        if (successBanner) {
+          successBanner.style.display = 'flex';
+          successBanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      } else {
+        throw new Error('Server responded with ' + res.status);
+      }
+    })
+    .catch(err => {
+      console.error('[Form] Submission failed:', err);
+      if (errorBanner) {
+        errorBanner.style.display = 'flex';
+        errorBanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    })
+    .finally(() => {
+      if (btn) {
         btn.disabled = false;
         btn.textContent = 'Send Enquiry →';
-      }, 4000);
-    }
+      }
+    });
   });
 }
