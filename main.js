@@ -44,8 +44,8 @@ function isFutureDate(val) {
    Allows max 3 submissions per rolling 10-minute window.
 ============================================================= */
 const RATE_KEY    = 'plateo_form_times';
-const RATE_MAX    = 3;
-const RATE_WINDOW = 10 * 60 * 1000; // 10 min
+const RATE_MAX    = 5;
+const RATE_WINDOW = 30 * 60 * 1000; // 30 min
 
 function isRateLimited() {
   const now   = Date.now();
