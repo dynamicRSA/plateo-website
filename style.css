@@ -862,6 +862,8 @@ textarea { resize: vertical; }
   .food-card--featured { transform: none; }
   .team-photo img, .team-photo--tall img { height: 260px; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
+  .nav-logo-img { height: 120px; }
+  #navbar.scrolled .nav-logo-img { height: 80px; }
 }
 
 @media (max-width: 640px) {
@@ -873,4 +875,7 @@ textarea { resize: vertical; }
   .form-row { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+  .nav-logo-img { height: 80px; }
+  #navbar.scrolled .nav-logo-img { height: 56px; }
+  .paella-grid { grid-template-columns: 1fr; }
 }
